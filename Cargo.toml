@@ -1,18 +1,18 @@
 [package]
-authors = ["Kotauskas <v.toncharov@gmail.com>"]
+authors = ["Kotauskas <v.toncharov@gmail.com>", "Techcable <Techcable@techcable.net"]
 edition = "2018"
-name = "thin_trait_object"
-version = "1.1.2"
+name = "thin-trait-object-zerogc"
+version = "0.1.0"
+publish = false
 
-documentation = "https://docs.rs/thin_trait_object/*/thin_trait_object"
 license = "MIT OR Apache-2.0"
 readme = "README.md"
-repository = "https://github.com/kotauskas/thin_trait_object"
+repository = "https://github.com/DuckLogic/thin-trait-object-zerogc"
 
-description = "One pointer wide trait objects which are also FFI safe, allowing traits to be passed to/from and implemented by C ABI code"
+description = "Garbage collected, one pointer wide trait objects which are also FFI safe, allowing traits to be passed to/from and implemented by C ABI code"
 
 categories = ["development-tools::ffi", "rust-patterns", "no-std"]
-keywords = ["ffi", "trait", "dyn", "virtual"]
+keywords = ["ffi", "trait", "dyn", "virtual", "gc", "zerogc"]
 
 [lib]
 path = "./src/lib.rs"
@@ -25,6 +25,9 @@ quote = "1.0"
 replace_with = "0.1"
 # Sadly cannot use the default configuration because it can't parse traits
 syn = { version = "1.0", features = ["full", "extra-traits"] }
+
+[dependencies.zerogc]
+version = "0.2.0-alpha.4"
 
 [features]
 default = ["std"]
